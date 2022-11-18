@@ -1,0 +1,21 @@
+{
+  "name": "backend-group-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viktor472/backend-group-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viktor472/backend-group-project/issues"
+  },
+  "homepage": "https://github.com/viktor472/backend-group-project#readme"
+}
