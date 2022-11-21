@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const items = require("./routes/items");
 const mongoose = require("mongoose");
 const port = 8080;
+mongoose.set("debug", (collectionName, method, query, doc) => {
+    console.log(`${collectionName}.${method}`, JSON.stringify(query), doc);
+});
 
 
 
