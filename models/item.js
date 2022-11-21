@@ -2,14 +2,17 @@ const mongoose = require('mongoose');
 
 const itemSchema = new mongoose.Schema(
 {
-    itemId:
+    _id:
     {
-        type: Number 
+        type: Number,
+        required :true,
+        unique: true
     },
     title:
     {
-        type: String
+        type: String,
+        required :true
     }
-})
+}, { versionKey: false })
 
 module.exports = mongoose.model('Item', itemSchema);
