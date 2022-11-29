@@ -14,11 +14,14 @@ exports.postUser = (req, res) => {
   })
 }
 
+//Update blog post (Sina)
 exports.updateUser = (req, res) => {
+  // Read from head and body
   let id = req.params.id
   let title = req.body.title
   let article = req.body.article
 
+  // Check title and article fields not empty
   if (title && article) {
     let index = posts.findIndex((upd) => upd.id == id)
 
