@@ -5,15 +5,15 @@ exports.getPost = (req, res) => {
   res.status(200).json({
     msg: 'Post:',
     result: posts.length,
-    status: 'seuccess',
+    status: 'success',
     data: posts
   })
 }
 
 //create blog post (Viktor)
 exports.postBlog = (req, res) => {
-  let title = req.body.title
-  let article = req.body.article
+  const title = req.body.title
+  const article = req.body.article
   posts.push({
     title: title,
     article: article,
