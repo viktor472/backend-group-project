@@ -1,7 +1,7 @@
 let posts = []
 
 //get blog posts (Viktor)
-exports.getpost = (req, res) => {
+exports.getPost = (req, res) => {
   res.status(200).json({
     msg: 'Post:',
     result: posts.length,

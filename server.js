@@ -3,7 +3,7 @@ const app = express()
 const PORT = process.env.PORT || 3000
 //midle weare
 app.use(express.json())
-app.use('/api/blog', require('./routes/blogController'))
+app.use('/api/blog', require('./routes/blogRoutes'))
 
 //midle weare end
 
