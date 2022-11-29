@@ -1,7 +1,15 @@
 let posts = [];
-
+//get blog posts (Viktor)
+exports.getpost = (req, res) => {
+  res.status(200).json({
+    msg: "Post:",
+    result: posts.length,
+    status: "seuccess",
+    data: posts,
+  });
+};
 //create blog post (Viktor)
-exports.postUser = (req, res) => {
+exports.postpost = (req, res) => {
   let title = req.body.title;
   let article = req.body.article;
   posts.push({
