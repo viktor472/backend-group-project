@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-// Importing user Controller file
-const userController = require('../controllers/blogController')
+// Importing post Controller file
+const blogController = require('../controllers/blogController')
 
 router.get('/', blogController.getPost).post('/', blogController.postBlog)
 router
