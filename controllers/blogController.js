@@ -35,24 +35,31 @@ exports.updateBlog = (req, res) => {
   let title = req.body.title
   let article = req.body.article
 
-  // Check title and article not empty
   if (title && article) {
-    let index = posts.findIndex((upd) => upd.id == id)
+    let index // Check title and article not empty = posts.findIndex((upd) => upd.id == id)
 
-    posts[index] = {
-      ...posts[index],
-      title,
-      article
+    // Check ID exist
+    if (index === 1) {
+      posts[index] = {
+        ...posts[index],
+        title,
+        article
+      }
+
+      res.status(200).json({
+        msg: 'Blog updated',
+        status: 'success',
+        data: posts
+      })
+    } else {
+      res.status(400).json({
+        msg: 'Validation error',
+        status: 'Failed'
+      })
     }
-
-    res.status(200).json({
-      msg: 'Blog updated',
-      status: 'success',
-      data: posts
-    })
   } else {
     res.status(400).json({
-      msg: 'Validation error',
+      msg: 'Please insert title or article',
       status: 'Failed'
     })
   }
@@ -63,12 +70,21 @@ exports.updateBlog = (req, res) => {
 exports.removeBlog = (req, res) => {
   // get id from reguest
   let id = req.params.id
+<<<<<<< HEAD
   let idCheck = posts.findIndex(el => el.id === id);
   console.log(idCheck);
   // check id match
   if (idCheck > 1) {
      const newPosts = posts.filter((el) => el.id !== id)
     posts = newPosts;
+=======
+  let idCheck = posts.map((el) => el.id === id)
+  console.log(idCheck)
+  // check id match
+  if (!idCheck) {
+    const newPosts = posts.filter((el) => el.id !== id)
+    posts = newPosts
+>>>>>>> f09bfe90cb448d1e891a6ec1c9c730f4988a94ec
     // delete success message
     res.status(200).json({
       msg: `Blog with id: ${id}  deleted`,
