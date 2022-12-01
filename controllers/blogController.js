@@ -73,7 +73,7 @@ exports.removeBlog = (req, res) => {
   let idCheck = posts.findIndex(el => el.id === id);
   console.log(idCheck);
   // check id match
-  if (idCheck > 1) {
+  if (idCheck >= 0) {
      const newPosts = posts.filter((el) => el.id !== id)
     posts = newPosts;
     // delete success message
