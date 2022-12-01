@@ -70,21 +70,12 @@ exports.updateBlog = (req, res) => {
 exports.removeBlog = (req, res) => {
   // get id from reguest
   let id = req.params.id
-<<<<<<< HEAD
   let idCheck = posts.findIndex(el => el.id === id);
   console.log(idCheck);
   // check id match
   if (idCheck > 1) {
      const newPosts = posts.filter((el) => el.id !== id)
     posts = newPosts;
-=======
-  let idCheck = posts.map((el) => el.id === id)
-  console.log(idCheck)
-  // check id match
-  if (!idCheck) {
-    const newPosts = posts.filter((el) => el.id !== id)
-    posts = newPosts
->>>>>>> f09bfe90cb448d1e891a6ec1c9c730f4988a94ec
     // delete success message
     res.status(200).json({
       msg: `Blog with id: ${id}  deleted`,
