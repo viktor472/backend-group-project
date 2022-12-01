@@ -17,10 +17,11 @@ exports.postBlog = (req, res) => {
   posts.push({
     title: title,
     article: article,
-    id: (users.length + 1).toString()
+    id: (posts.length + 1).toString()
   })
   res.status(200).json({
-    msg: `Post upploaded!`
+    msg: `Post upploaded!`,
+    data: posts
   })
 }
 
@@ -58,21 +59,22 @@ exports.updateBlog = (req, res) => {
 
 exports.removeBlog = (req, res) => {
   // get id from reguest
-  let id = req.params.id;
+  let id = req.params.id
   // check id match
   if (id) {
-      const newPosts = posts.filter(el => el.id !== id);
-      posts = newPosts;
-      // delete success message
-      res.status(200).json({
-        msg: `Blog with id: ${id}  deleted`,
-      status: 'success'
-      })
-    } else {
-      //delete match error
-      res.status(404).json({
-        msg: 'id match error',
-        status: 'Failed'
-      })
-    }
+    const newPosts = posts.filter((el) => el.id !== id)
+    posts = newPosts
+    // delete success message
+    res.status(200).json({
+      msg: `Blog with id: ${id}  deleted`,
+      status: 'success',
+      data: posts
+    })
+  } else {
+    //delete match error
+    res.status(404).json({
+      msg: 'id match error',
+      status: 'Failed'
+    })
+  }
 }
