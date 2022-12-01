@@ -1,3 +1,5 @@
+const uuid = require('uuid')
+const myUId = uuid.v4
 let posts = []
 
 //get blog posts (Viktor)
@@ -15,10 +17,11 @@ exports.postBlog = (req, res) => {
   const title = req.body.title
   const article = req.body.article
   posts.push({
+    id: myUId(),
     title: title,
-    article: article,
-    id: (posts.length + 1).toString()
+    article: article
   })
+
   res.status(200).json({
     msg: `Post upploaded!`,
     data: posts
@@ -74,7 +77,7 @@ exports.removeBlog = (req, res) => {
     })
   } else {
     //delete match error
-    res.status(404).json({
+    res.status(400).json({
       msg: 'id match error',
       status: 'Failed'
     })
