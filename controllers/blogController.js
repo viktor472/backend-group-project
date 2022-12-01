@@ -1,3 +1,5 @@
+const uuid = require('uuid')
+const myUId = uuid.v4
 let posts = []
 
 //get blog posts (Viktor)
@@ -15,9 +17,9 @@ exports.postBlog = (req, res) => {
   const title = req.body.title
   const article = req.body.article
   posts.push({
+    id: myUId(),
     title: title,
-    article: article,
-    id: (posts.length + 1).toString()
+    article: article
   })
 
   res.status(200).json({

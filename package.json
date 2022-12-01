@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/viktor472/backend-group-project#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
