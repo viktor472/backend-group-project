@@ -53,3 +53,26 @@ exports.updateBlog = (req, res) => {
     })
   }
 }
+
+// Delete blog post (Navid)
+
+exports.removeBlog = (req, res) => {
+  // get id from reguest
+  let id = req.params.id;
+  // check id match
+  if (id) {
+      const newPosts = posts.filter(el => el.id !== id);
+      posts = newPosts;
+      // delete success message
+      res.status(200).json({
+        msg: `Blog with id: ${id}  deleted`,
+      status: 'success'
+      })
+    } else {
+      //delete match error
+      res.status(404).json({
+        msg: 'id match error',
+        status: 'Failed'
+      })
+    }
+}

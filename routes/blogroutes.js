@@ -10,6 +10,6 @@ router.post('/', blogController.postBlog)
 
 router.put('/:id', blogController.updateBlog)
 
-// router.delete('/:id', blogController.removeBlog)
+router.delete('/:id', blogController.removeBlog)
 
 module.exports = router
