@@ -39,20 +39,27 @@ exports.updateBlog = (req, res) => {
   if (title && article) {
     let index = posts.findIndex((upd) => upd.id == id)
 
-    posts[index] = {
-      ...posts[index],
-      title,
-      article
-    }
+    if (index === 1) {
+      posts[index] = {
+        ...posts[index],
+        title,
+        article
+      }
 
-    res.status(200).json({
-      msg: 'Blog updated',
-      status: 'success',
-      data: posts
-    })
+      res.status(200).json({
+        msg: 'Blog updated',
+        status: 'success',
+        data: posts
+      })
+    } else {
+      res.status(400).json({
+        msg: 'Validation error',
+        status: 'Failed'
+      })
+    }
   } else {
     res.status(400).json({
-      msg: 'Validation error',
+      msg: 'Please insert title or article',
       status: 'Failed'
     })
   }
