@@ -72,7 +72,6 @@ exports.removeBlog = (req, res) => {
   // get id from reguest
   let id = req.params.id
   let idCheck = posts.findIndex(el => el.id === id);
-  console.log(idCheck);
   // check id match
   if (idCheck >= 0) {
      const newPosts = posts.filter((el) => el.id !== id)
