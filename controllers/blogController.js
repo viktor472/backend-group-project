@@ -35,11 +35,12 @@ exports.updateBlog = (req, res) => {
   let title = req.body.title
   let article = req.body.article
 
+  // Check title and article not empty
   if (title && article) {
-    let index // Check title and article not empty = posts.findIndex((upd) => upd.id == id)
+    let index = posts.findIndex((upd) => upd.id == id)
 
     // Check ID exist
-    if (index === 1) {
+    if (index >= 0) {
       posts[index] = {
         ...posts[index],
         title,
