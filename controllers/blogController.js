@@ -63,10 +63,10 @@ exports.updateBlog = (req, res) => {
 exports.removeBlog = (req, res) => {
   // get id from reguest
   let id = req.params.id
-  let idCheck = posts.map(el => el.id === id);
+  let idCheck = posts.findIndex(el => el.id === id);
   console.log(idCheck);
   // check id match
-  if (!idCheck) {
+  if (idCheck > 1) {
      const newPosts = posts.filter((el) => el.id !== id)
     posts = newPosts;
     // delete success message
