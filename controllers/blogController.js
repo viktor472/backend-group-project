@@ -57,26 +57,22 @@ exports.updateBlog = (req, res) => {
 // Delete blog post (Navid)
 
 exports.removeBlog = (req, res) => {
-  var id = req.params.id;
-
+  // get id from reguest
+  let id = req.params.id;
+  // check id match
   if (id) {
-    if (el => el.id == id) {
       const newPosts = posts.filter(el => el.id !== id);
       posts = newPosts;
+      // delete success message
       res.status(200).json({
         msg: `Blog with id: ${id}  deleted`,
       status: 'success'
       })
-    } else{
-      res.status(400).json({
+    } else {
+      //delete match error
+      res.status(404).json({
         msg: 'id match error',
         status: 'Failed'
       })
     }
-  } else {
-  res.status(400).json({
-    msg: 'id exist error',
-    status: 'Failed'
-    })
-  }
 }
