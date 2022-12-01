@@ -19,6 +19,7 @@ exports.postBlog = (req, res) => {
     article: article,
     id: (posts.length + 1).toString()
   })
+
   res.status(200).json({
     msg: `Post upploaded!`,
     data: posts
@@ -72,7 +73,7 @@ exports.removeBlog = (req, res) => {
     })
   } else {
     //delete match error
-    res.status(404).json({
+    res.status(400).json({
       msg: 'id match error',
       status: 'Failed'
     })
