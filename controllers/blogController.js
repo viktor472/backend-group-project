@@ -35,10 +35,10 @@ exports.updateBlog = (req, res) => {
   let title = req.body.title
   let article = req.body.article
 
-  // Check title and article not empty
   if (title && article) {
-    let index = posts.findIndex((upd) => upd.id == id)
+    let index // Check title and article not empty = posts.findIndex((upd) => upd.id == id)
 
+    // Check ID exist
     if (index === 1) {
       posts[index] = {
         ...posts[index],
@@ -70,12 +70,12 @@ exports.updateBlog = (req, res) => {
 exports.removeBlog = (req, res) => {
   // get id from reguest
   let id = req.params.id
-  let idCheck = posts.map(el => el.id === id);
-  console.log(idCheck);
+  let idCheck = posts.map((el) => el.id === id)
+  console.log(idCheck)
   // check id match
   if (!idCheck) {
-     const newPosts = posts.filter((el) => el.id !== id)
-    posts = newPosts;
+    const newPosts = posts.filter((el) => el.id !== id)
+    posts = newPosts
     // delete success message
     res.status(200).json({
       msg: `Blog with id: ${id}  deleted`,
