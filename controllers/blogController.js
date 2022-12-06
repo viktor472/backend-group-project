@@ -1,5 +1,6 @@
 const uuid = require('uuid')
 const myUId = uuid.v4
+
 let posts = []
 
 //get blog posts (Viktor)
@@ -53,7 +54,7 @@ exports.updateBlog = (req, res) => {
         data: posts
       })
     } else {
-      res.status(400).json({
+      res.status(404).json({
         msg: 'Validation error',
         status: 'Failed'
       })
@@ -84,7 +85,7 @@ exports.removeBlog = (req, res) => {
     })
   } else {
     //delete match error
-    res.status(400).json({
+    res.status(404).json({
       msg: 'id match error',
       status: 'Failed'
     })
