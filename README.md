@@ -17,7 +17,7 @@
 <p><a href="http://localhost:3000">http://localhost:3000</a></p>
 <code>npm run server </code>
 
-## API Url
+## API URL
 <p>You can test blog API in this address: <a href="http://localhost:3000/api/blog"><code>./api/blog</code></a> </p>
 
 ## API documentations
