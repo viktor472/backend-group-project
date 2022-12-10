@@ -7,7 +7,7 @@
 
 ## Initial run project on your own machine
 
-<p>You just need to clone this repository on your machine! If you haven't Node.js on your machine you can download and install it<a href="https://nodejs.org/en/download/">THERE</a></p>
+<p>You just need to clone this repository on your machine! If you haven't Node.js on your machine you can download and install it<a href="https://nodejs.org/en/download/"> HERE</a></p>
 
 ## Install dependencis
 <code> npm install</code>
